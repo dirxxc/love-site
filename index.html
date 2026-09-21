@@ -35,7 +35,9 @@ body::before {
         radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.45) 100%);
 }
 
-/* ДОЖДЬ */
+/* =========================
+   ДОЖДЬ
+========================= */
 
 .rain {
     position: fixed;
@@ -89,7 +91,9 @@ body::before {
     }
 }
 
-/* ЛИСТЬЯ */
+/* =========================
+   ЛИСТЬЯ
+========================= */
 
 .leaves {
     position: fixed;
@@ -110,14 +114,51 @@ body::before {
     animation: falling 9s linear infinite;
 }
 
-.leaf:nth-child(1) { left: 8%; animation-delay: -2s; }
-.leaf:nth-child(2) { left: 19%; animation-delay: -6s; transform: scale(.8); }
-.leaf:nth-child(3) { left: 31%; animation-delay: -4s; transform: scale(1.1); }
-.leaf:nth-child(4) { left: 43%; animation-delay: -8s; transform: scale(.7); }
-.leaf:nth-child(5) { left: 56%; animation-delay: -1s; }
-.leaf:nth-child(6) { left: 67%; animation-delay: -5s; transform: scale(.9); }
-.leaf:nth-child(7) { left: 78%; animation-delay: -7s; transform: scale(1.1); }
-.leaf:nth-child(8) { left: 91%; animation-delay: -3s; transform: scale(.75); }
+.leaf:nth-child(1) {
+    left: 8%;
+    animation-delay: -2s;
+}
+
+.leaf:nth-child(2) {
+    left: 19%;
+    animation-delay: -6s;
+    transform: scale(.8);
+}
+
+.leaf:nth-child(3) {
+    left: 31%;
+    animation-delay: -4s;
+    transform: scale(1.1);
+}
+
+.leaf:nth-child(4) {
+    left: 43%;
+    animation-delay: -8s;
+    transform: scale(.7);
+}
+
+.leaf:nth-child(5) {
+    left: 56%;
+    animation-delay: -1s;
+}
+
+.leaf:nth-child(6) {
+    left: 67%;
+    animation-delay: -5s;
+    transform: scale(.9);
+}
+
+.leaf:nth-child(7) {
+    left: 78%;
+    animation-delay: -7s;
+    transform: scale(1.1);
+}
+
+.leaf:nth-child(8) {
+    left: 91%;
+    animation-delay: -3s;
+    transform: scale(.75);
+}
 
 @keyframes falling {
     0% {
@@ -139,7 +180,9 @@ body::before {
     }
 }
 
-/* ОСНОВА */
+/* =========================
+   ОСНОВА
+========================= */
 
 main {
     position: relative;
@@ -153,7 +196,9 @@ section {
     margin-bottom: 75px;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     min-height: 92vh;
@@ -197,7 +242,9 @@ section {
     letter-spacing: 2px;
 }
 
-/* ЗАГОЛОВКИ */
+/* =========================
+   ЗАГОЛОВКИ
+========================= */
 
 .title {
     text-align: center;
@@ -208,7 +255,9 @@ section {
     color: #efdcc9;
 }
 
-/* О ТЕБЕ */
+/* =========================
+   О ТЕБЕ
+========================= */
 
 .cards {
     display: grid;
@@ -239,7 +288,9 @@ section {
     color: #cbb5a4;
 }
 
-/* СТИХИ */
+/* =========================
+   СТИХИ
+========================= */
 
 .poems {
     display: flex;
@@ -260,7 +311,9 @@ section {
     box-shadow: 0 10px 35px rgba(0,0,0,.12);
 }
 
-/* ПОЖЕЛАНИЯ */
+/* =========================
+   ПОЖЕЛАНИЯ
+========================= */
 
 .wishes {
     text-align: center;
@@ -298,7 +351,9 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* ФИНАЛ */
+/* =========================
+   ФИНАЛ
+========================= */
 
 .final {
     text-align: center;
@@ -333,7 +388,9 @@ button:hover {
     margin-top: 8px;
 }
 
-/* КАКАО */
+/* =========================
+   КАКАО
+========================= */
 
 .cocoa {
     position: fixed;
@@ -344,13 +401,16 @@ button:hover {
     pointer-events: none;
 }
 
+/* Левая чашка смотрит вправо */
 .cocoa.left {
     left: 12px;
-    transform: scaleX(-1);
+    transform: none;
 }
 
+/* Правая чашка смотрит влево */
 .cocoa.right {
     right: 12px;
+    transform: scaleX(-1);
 }
 
 .saucer {
@@ -415,7 +475,7 @@ button:hover {
 }
 
 @keyframes steam {
-    0%,100% {
+    0%, 100% {
         transform: translateY(5px) rotate(5deg);
         opacity: .15;
     }
@@ -426,7 +486,9 @@ button:hover {
     }
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
@@ -473,18 +535,21 @@ button:hover {
     }
 
     .cocoa {
+        bottom: 15px;
         transform: scale(.75);
         transform-origin: bottom;
     }
 
     .cocoa.left {
         left: -5px;
-        transform: scaleX(-1) scale(.75);
+        transform: none;
+        transform-origin: bottom left;
     }
 
     .cocoa.right {
         right: -5px;
-        transform: scale(.75);
+        transform: scaleX(-1) scale(.75);
+        transform-origin: bottom right;
     }
 }
 </style>
@@ -712,7 +777,7 @@ button:hover {
     </p>
 
     <div class="signature">
-        С любовью от Маси
+        <div>С любовью от Маси</div>
         <div class="for-sofia">Для Соньки ♡</div>
         <div class="fox">🦊</div>
     </div>
